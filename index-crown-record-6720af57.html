@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皇冠体育 · 资料索引库</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      background: #f5f7fc;
+      color: #1e293b;
+    }
+    .wrapper {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(135deg, #0b1628 0%, #192b4a 100%);
+      color: #e9edf2;
+      padding: 64px 0 56px;
+      text-align: center;
+      border-bottom: 4px solid #facc15;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #a5b9d4;
+      max-width: 600px;
+      margin: 0 auto;
+      border-top: 1px solid #334155;
+      padding-top: 14px;
+      display: inline-block;
+    }
+    /* 目录感布局：两栏 + 卡片 */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 40px 0 36px;
+    }
+    @media (max-width: 768px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #0b1628;
+    }
+    .card h2 .icon {
+      display: inline-block;
+      width: 6px;
+      height: 20px;
+      background: #facc15;
+      border-radius: 3px;
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card ul li {
+      padding: 6px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      display: flex;
+      gap: 10px;
+    }
+    .card ul li::before {
+      content: "▹";
+      color: #facc15;
+      font-weight: bold;
+    }
+    .note-box {
+      background: #f0f4fe;
+      border-left: 5px solid #facc15;
+      padding: 18px 22px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0 20px;
+    }
+    .note-box p {
+      font-size: 0.95rem;
+    }
+    .faq-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin: 20px 0 28px;
+    }
+    .faq-item {
+      flex: 1 1 200px;
+      background: #ffffff;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .faq-item strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    .faq-item span {
+      font-size: 0.9rem;
+      color: #1e293b;
+    }
+    .rel-links {
+      margin: 32px 0 40px;
+      border-top: 1px solid #d1d9e6;
+      padding-top: 28px;
+    }
+    .rel-links h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #0b1628;
+    }
+    .rel-links p {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .rel-links a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #2563eb;
+    }
+    .rel-links a:hover {
+      color: #f59e0b;
+      border-bottom-color: #f59e0b;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+      padding: 24px 0 32px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 10px;
+    }
+    .highlight-link {
+      color: #2563eb;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.15s;
+    }
+    .highlight-link:hover {
+      color: #f59e0b;
+      border-bottom-color: #f59e0b;
+    }
+    .inline-link {
+      color: #1e3a5f;
+      background: #f0f4fe;
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+    .scenario-tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e3a5f;
+      font-size: 0.8rem;
+      padding: 2px 12px;
+      border-radius: 20px;
+      margin: 2px 4px 2px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <section class="hero">
+    <div class="wrapper">
+      <h1>皇冠体育 · 资料索引库</h1>
+      <div class="sub">信息整理 · 结构阅读 · 条目归档</div>
+    </div>
+  </section>
+
+  <div class="wrapper">
+
+    <!-- 双栏目录卡片 -->
+    <div class="main-grid">
+      <!-- 卡片 1: 资料说明区 -->
+      <div class="card">
+        <h2><span class="icon"></span> 说明区 · 资料属性</h2>
+        <p>本索引页围绕 <a href="https://index-crown.com" class="highlight-link">皇冠体育</a> 的公开信息进行结构化收集，聚焦于条目分类与内容衔接。资料整理范围包括：背景摘要、功能分区、常见术语以及使用场景。所有条目均来自公开渠道，仅供信息参考与知识归档。</p>
+        <p style="margin-top: 12px;">索引库采用“卡片‑标签‑摘要”三级结构，便于按需定位。以下分区可作为查阅的起点。</p>
+      </div>
+
+      <!-- 卡片 2: 特点/场景 -->
+      <div class="card">
+        <h2><span class="icon"></span> 场景区 · 典型用途</h2>
+        <p>根据现有资料，与 <a href="https://index-crown.com" class="highlight-link">皇冠体育</a> 相关的信息常出现在以下场景：</p>
+        <ul>
+          <li>内容检索与分类导航</li>
+          <li>条目摘要与关联参考</li>
+          <li>技术文档与功能介绍</li>
+          <li>社区讨论与经验整理</li>
+        </ul>
+        <div style="margin-top: 12px;">
+          <span class="scenario-tag">#信息索引</span>
+          <span class="scenario-tag">#资料卡片</span>
+          <span class="scenario-tag">#结构化阅读</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 提示区（强调色） -->
+    <div class="note-box">
+      <p><strong>提示：</strong> 本页面为静态索引页，不收集任何用户数据。所有链接指向外部公开资源，内容以条目整理为主，不构成任何形式的使用指导或推荐。</p>
+    </div>
+
+    <!-- FAQ 摘要区 -->
+    <div class="faq-summary">
+      <div class="faq-item">
+        <strong>FAQ · 条目范围</strong>
+        <span>涵盖功能介绍、常见名词、版本变化等。</span>
+      </div>
+      <div class="faq-item">
+        <strong>FAQ · 如何更新</strong>
+        <span>索引内容根据公开资料定期校验，保持条目新鲜度。</span>
+      </div>
+      <div class="faq-item">
+        <strong>FAQ · 相关信息</strong>
+        <span>关联资源可通过下方链接进一步浏览。</span>
+      </div>
+    </div>
+
+    <!-- 相关信息区（自然嵌入链接） -->
+    <div class="rel-links">
+      <h3>相关信息区</h3>
+      <p>
+        若您需要进一步查阅 <a href="https://index-crown.com" class="highlight-link">皇冠体育</a> 的详细条目，可直接访问索引主页。此外，以下资料可供对照参考：平台功能概览、用户手册摘要、版本发布说明。所有链接均指向同一资源库，便于统一管理。
+      </p>
+      <p style="margin-top: 10px;">
+        值得一提的是，<a href="https://index-crown.com" class="inline-link">皇冠体育</a> 的资料结构采用模块化排版，适合快速定位特定内容。建议配合标签筛选使用。
+      </p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+      皇冠体育 · 资料索引库 · 仅供信息整理
+    </div>
+
+  </div>
+
+</body>
+</html>
